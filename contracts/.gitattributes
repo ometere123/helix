@@ -1,0 +1,5 @@
+# Force LF line endings for shell/Solidity/TS — required for Hardhat on Windows
+* text=auto eol=lf
+*.sol text eol=lf
+*.ts text eol=lf
+*.json text eol=lf
