@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Helix design tokens — Tailwind v4
+   Internal vars (--hx-*) hold raw RGB channels.
+   @theme inline wraps them so utility classes resolve at runtime.
+   Dark mode: html.dark overrides the --hx-* vars.
+   ============================================================ */
+
+/* --- Raw channel values (space-separated for rgb()) -------- */
+:root {
+  --hx-bg:          255 255 255;
+  --hx-surface:     255 255 255;
+  --hx-ink:         11  18  32;
+  --hx-ink-muted:   100 116 139;
+  --hx-brand:       37  99  235;
+  --hx-brand-wash:  239 246 255;
+  --hx-cta:         239 68  68;
+  --hx-line:        226 232 240;
+  --hx-success:     22  163 74;
+  --hx-warn:        234 88  12;
+
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --primary: 221.2 83.2% 53.3%;
+  --primary-foreground: 210 40% 98%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 221.2 83.2% 53.3%;
+  --radius: .5rem;
+}
+
+html.dark {
+  --hx-bg:          9   12  22;
+  --hx-surface:     17  22  37;
+  --hx-ink:         226 232 240;
+  --hx-ink-muted:   148 163 184;
+  --hx-brand:       96  165 250;
+  --hx-brand-wash:  30  41  90;
+  --hx-cta:         248 113 113;
+  --hx-line:        30  41  59;
+  --hx-success:     74  222 128;
+  --hx-warn:        251 146 60;
+
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 47.4% 11.2%;
+  --card-foreground: 210 40% 98%;
+  --primary: 217.2 91.2% 59.8%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 224.3 76.3% 48%;
+}
+
+/* --- Tailwind color tokens (no circular refs) --------------- */
+@theme inline {
+  --color-bg:         rgb(var(--hx-bg));
+  --color-surface:    rgb(var(--hx-surface));
+  --color-ink:        rgb(var(--hx-ink));
+  --color-ink-muted:  rgb(var(--hx-ink-muted));
+  --color-brand:      rgb(var(--hx-brand));
+  --color-brand-2:    rgb(var(--hx-brand));
+  --color-brand-wash: rgb(var(--hx-brand-wash));
+  --color-cta:        rgb(var(--hx-cta));
+  --color-line:       rgb(var(--hx-line));
+  --color-success:    rgb(var(--hx-success));
+  --color-warn:       rgb(var(--hx-warn));
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* --- Base -------------------------------------------------- */
+html, body {
+  background-color: rgb(var(--hx-bg));
+  color: rgb(var(--hx-ink));
+}
+
+body {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* ---- Spinner (used by TxButton) -------------------------- */
+@keyframes _spin { to { transform: rotate(360deg); } }
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.32);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: _spin 0.65s linear infinite;
+  vertical-align: middle;
+}
+
+/* ---- Token accent classes -------------------------------- */
+.token-usdc {
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.08);
+  border-color: rgba(37, 99, 235, 0.22);
+}
+.dark .token-usdc {
+  color: #60a5fa;
+  background: rgba(96, 165, 250, 0.12);
+  border-color: rgba(96, 165, 250, 0.25);
+}
+.token-eurc {
+  color: #a16207;
+  background: rgba(202, 138, 4, 0.08);
+  border-color: rgba(202, 138, 4, 0.22);
+}
+.dark .token-eurc {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.12);
+  border-color: rgba(251, 191, 36, 0.25);
+}
+
+/* ---- Subtle scrollbar (dark) ----------------------------- */
+.dark ::-webkit-scrollbar { width: 6px; height: 6px; }
+.dark ::-webkit-scrollbar-track { background: transparent; }
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 99px;
+}
+.dark ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.18); }
