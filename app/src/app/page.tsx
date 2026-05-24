@@ -40,14 +40,14 @@ export default function Home() {
         </div>
 
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-5 sm:mb-6 text-ink leading-[1.05]">
-          Two currencies.
+          The stablecoin protocol
           <br />
-          <span className="text-brand">One protocol.</span>
+          <span className="text-brand">for the agent economy.</span>
         </h1>
 
         <p className="text-base sm:text-xl text-ink-muted mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
-          Stablecoin-first DeFi and an agent economy built on Circle&apos;s Arc.
-          Real USDC and EURC, gasless onboarding via the faucet, and an autonomous payment crank.
+          Swap, lend, stream, and escrow real USDC and EURC on Circle&apos;s Arc.
+          Register AI agents on-chain. Let them pay each other — no bank, no intermediary, no permission needed.
         </p>
 
         <div className="grid grid-cols-1 sm:flex gap-3 sm:gap-4 justify-center mb-12 sm:mb-20">

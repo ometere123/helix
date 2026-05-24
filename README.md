@@ -1,6 +1,6 @@
 # Helix
 
-> The stablecoin protocol for the Circle economy.
+> The stablecoin protocol for the agent economy.
 
 Helix is a DeFi protocol and agent payment layer built natively on [Arc Testnet](https://docs.arc.io/) — Circle's own L1 blockchain. It runs on real USDC and EURC: the dollar and the euro, issued directly by Circle, bridgeable to and from any CCTP-supported chain.
 
