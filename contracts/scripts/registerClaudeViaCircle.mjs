@@ -8,8 +8,8 @@ import crypto from "crypto";
 import { randomUUID } from "crypto";
 import { encodeFunctionData, parseUnits } from "viem";
 
-const CIRCLE_API_KEY   = "TEST_API_KEY:64db005cdac583e885037dc4d2d75cfb:52b19012ea9104c167727b808b52fad8";
-const ENTITY_SECRET    = "b11e8a56b8554b9bcbef7df2927cfc8bb1a3762a780ed2e9c33e83b8ae0a4263";
+const CIRCLE_API_KEY   = process.env.CIRCLE_API_KEY;
+const ENTITY_SECRET    = process.env.CIRCLE_ENTITY_SECRET;
 const CLAUDE_WALLET_ID = "85bc7f89-726d-543d-8755-d3d660c1f9f7";
 const AGENT_REGISTRY   = "0x60d04a6cd227f8949b598ae32186b5a7566b2ef6";
 const USDC             = "0x3600000000000000000000000000000000000000";
